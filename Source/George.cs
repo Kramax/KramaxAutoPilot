@@ -2919,7 +2919,7 @@ namespace Kramax
                 GUI.backgroundColor = GeneralUI.ActiveBackground;
             else
                 GUI.backgroundColor = GeneralUI.InActiveBackground;
-            if (GUILayout.Button(VertActive ? "Pitch (Active)" : "Pitch", GUILayout.Width(panelWidth - 14)))
+            if (GUILayout.Button(VertActive ? "Vertical (Active)" : "Vertical", GUILayout.Width(panelWidth - 14)))
                 vertModeChanged(CurrentVertMode, !VertActive);
 
             // reset colour
