@@ -1,0 +1,6 @@
+{
+    "spec_version" : 1,
+    "identifier"   : "KramaxAutoPilot",
+    "$kref"        : "#/ckan/kerbalstuff/1190",
+    "x_netkan_license_ok": true
+}
