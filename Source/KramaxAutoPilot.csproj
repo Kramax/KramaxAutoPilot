@@ -68,7 +68,6 @@
     <Compile Include="ReleaseReloadableMonoBehaviour.cs" />
     <Compile Include="Toolbar\AppLauncher.cs" />
     <Compile Include="Toolbar\ToolbarMod.cs" />
-    <Compile Include="Toolbar\ToolbarWrapper.cs" />
     <Compile Include="Utility\GeneralUI.cs" />
     <Compile Include="Utility\Utility.cs" />
     <Compile Include="VesselData.cs">

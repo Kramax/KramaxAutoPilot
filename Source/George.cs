@@ -2404,11 +2404,11 @@ namespace Kramax
             }
             #endregion
 
-            window = GUILayout.Window(34244, window, displayWindow, "", GeneralUI.UISkin.box, GUILayout.Height(0), GUILayout.Width(width));
+            window = GUILayout.Window(382498, window, displayWindow, "", GeneralUI.UISkin.box, GUILayout.Height(0), GUILayout.Width(width));
 
             // tooltip window. Label skin is transparent so it's only drawing what's inside it
             if (tooltip != "" && KramaxAutoPilot.bDisplayTooltips)
-                GUILayout.Window(34246, new Rect(Input.mousePosition.x + 20, // window.x + window.width,
+                GUILayout.Window(382499, new Rect(Input.mousePosition.x + 20, // window.x + window.width,
                                                  Screen.height - Input.mousePosition.y + 20,
                                                  300, 0),
                                  tooltipWindow, "", GeneralUI.UISkin.label);
@@ -2437,7 +2437,7 @@ namespace Kramax
                 flightPlanManagerWindow.y = window.y + 200;
 
                 flightPlanManagerWindow =
-                    GUILayout.Window(34249, flightPlanManagerWindow, DisplayFlightPlanManagerWindow,
+                    GUILayout.Window(382500, flightPlanManagerWindow, DisplayFlightPlanManagerWindow,
                                      "", GeneralUI.UISkin.box, GUILayout.Width(300));
             }
 
@@ -2447,7 +2447,7 @@ namespace Kramax
                 presetWindow.x = window.x + window.width;
                 presetWindow.y = window.y;
 
-                presetWindow = GUILayout.Window(34245, presetWindow, displayPresetWindow, "", GeneralUI.UISkin.box, GUILayout.Width(200));
+                presetWindow = GUILayout.Window(382501, presetWindow, displayPresetWindow, "", GeneralUI.UISkin.box, GUILayout.Width(200));
             }
         }
 
@@ -3116,7 +3116,7 @@ namespace Kramax
 
                     targetSpeed = GeneralUI.numberEntryBox(targetSpeed, out updated, 10.0, "0.00", 78);
 
-                    if (ThrtActive && (update_button_pressed || updated))
+                    if (update_button_pressed || (ThrtActive && updated))
                     {
                         GeneralUI.postMessage("Target Speed updated");
 
@@ -3141,7 +3141,7 @@ namespace Kramax
 
                     targetSpeed = GeneralUI.numberEntryBox(targetSpeed, out updated, 10.0, "0.00", 78);
 
-                    if (ThrtActive && (update_button_pressed || updated))
+                    if (update_button_pressed || (ThrtActive && updated))
                     {
                         GeneralUI.postMessage("Target Accel updated");
 

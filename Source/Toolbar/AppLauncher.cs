@@ -25,24 +25,12 @@ namespace Kramax.Toolbar
 
         private static void OnToggleTrue()
         {
-            if (Input.GetMouseButtonUp(0))
-                KramaxAutoPilot.bDisplayOptions = true;
-            else if (Input.GetMouseButtonUp(1))
-            {
-                KramaxAutoPilot.bDisplayAutoPilot = true;
-                setBtnState(KramaxAutoPilot.bDisplayOptions);
-            }
+            KramaxAutoPilot.bDisplayAutoPilot = true;
         }
 
         private static void OnToggleFalse()
         {
-            if (Input.GetMouseButtonUp(0))
-                KramaxAutoPilot.bDisplayOptions = false;
-            else if (Input.GetMouseButtonUp(1))
-            {
-                KramaxAutoPilot.bDisplayAutoPilot = true;
-                setBtnState(KramaxAutoPilot.bDisplayOptions);
-            }
+            KramaxAutoPilot.bDisplayAutoPilot = false;
         }
 
         public static void setBtnState(bool state, bool click = false)

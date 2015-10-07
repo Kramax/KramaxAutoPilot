@@ -66,11 +66,8 @@ namespace Kramax
     public class KramaxAutoPilot : ReloadableMonoBehaviour
     {
         bool bUseStockToolbar = true;
-        public static bool bDisplayOptions = false; // set by launcher
         public static bool bDisplayAutoPilot = false; // set by launcher
         public static bool bDisplayTooltips = true; // set by launcher
-
-        public Rect window; // for buttons which bring up control panels
         public static bool bHideUI = false;
 
         George mainPilot = null;
@@ -93,6 +90,11 @@ namespace Kramax
             Deb.Log("KramaxAutoPilot: Awake {0}", this.GetInstanceID());
         }
 
+        private bool UseAppLauncher()
+        {
+            return bUseStockToolbar /* || !Kramax.Toolbar.ToolbarManager.ToolbarAvailable */;
+        }
+
         /*
          * Called next.
          */
@@ -104,10 +106,10 @@ namespace Kramax
             // initialize any variables
             // install any callbacks
             // install in toolbar
-            if (!bUseStockToolbar && Kramax.Toolbar.ToolbarManager.ToolbarAvailable)
-                Kramax.Toolbar.ToolbarMod.Start();
-            else
+            if (UseAppLauncher())
                 Kramax.Toolbar.AppLauncherAutoPilot.Start();
+            else
+                Kramax.Toolbar.ToolbarMod.Start();
 
             if (mainPilot != null)
             {
@@ -126,6 +128,10 @@ namespace Kramax
         public void Update()
         {
             // Deb.Verb("KramaxAutoPilot: Update");
+            if (UseAppLauncher())
+            {
+                Kramax.Toolbar.AppLauncherAutoPilot.setBtnState(bDisplayAutoPilot);
+            }
         }
 
         /*
@@ -141,6 +147,7 @@ namespace Kramax
             // Deb.Verb("KramaxAutoPilot: LateUpdate");
         }
 
+        /*
         public void OnGUI()
         {
             if (GeneralUI.UISkin == null)
@@ -156,13 +163,11 @@ namespace Kramax
 
         public void Draw()
         {
-            bDisplayAutoPilot = bDisplayOptions;
-            /*
             if (bDisplayOptions)
                 window = GUILayout.Window(0984653, window, optionsWindow, "", GUILayout.Width(0), GUILayout.Height(0));
-             */
         }
 
+       
         private void optionsWindow(int id)
         {
             if (GUI.Button(new Rect(window.width - 16, 2, 14, 14), ""))
@@ -170,7 +175,6 @@ namespace Kramax
 
             bDisplayAutoPilot = GUILayout.Toggle(bDisplayAutoPilot, "Kramax Autopilot", GeneralUI.UISkin.customStyles[(int)myStyles.btnToggle]);
 
-            /*
             if (GUILayout.Button("Update Defaults"))
             {
                 PresetManager.updateDefaults();
@@ -190,9 +194,10 @@ namespace Kramax
                 }
                 GUILayout.EndHorizontal();
             }
-             */
+
             GUI.DragWindow();
         }
+        */
 
         void hideUI()
         {
@@ -208,10 +213,10 @@ namespace Kramax
         {
             Deb.Log("KramaxAutoPilot: OnDestroy {0}", this.GetInstanceID());
 
-            if (!bUseStockToolbar && Kramax.Toolbar.ToolbarManager.ToolbarAvailable)
-                Kramax.Toolbar.ToolbarMod.OnDestroy();
-            else
+            if (UseAppLauncher())
                 Kramax.Toolbar.AppLauncherAutoPilot.OnDestroy();
+            else
+                Kramax.Toolbar.ToolbarMod.OnDestroy();
 
             if (mainPilot)
             {
