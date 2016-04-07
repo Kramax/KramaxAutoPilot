@@ -11,5 +11,6 @@ copy /y LICENSE.txt Release\%DIR%\GameData\%MOD_NAME%\
 copy /y README.md Release\%DIR%\GameData\%MOD_NAME%\
 
 cd Release\%DIR%
-zip -r ../%DIR%.zip GameData
+rem zip -r ../%DIR%.zip GameData
+"c:\Program Files\7-Zip\7z.exe"  a -r ../%DIR%.zip GameData
 cd ..\..

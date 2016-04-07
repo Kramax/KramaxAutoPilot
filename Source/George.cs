@@ -1112,7 +1112,8 @@ namespace Kramax
     }
 
 
-    public class George : ReloadableMonoBehaviour
+	public class George : ReloadableMonoBehaviour
+//	public class George : MonoBehaviour
     {
         #region Globals
         public Vessel vessel = null;

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.UI.Screens;
+using KSP.UI.Screens.Flight;
 
 namespace Kramax
 {
@@ -98,7 +100,8 @@ namespace Kramax
         }
     }
 
-    public class CDI : ReloadableMonoBehaviour
+	public class CDI : ReloadableMonoBehaviour
+//	public class CDI : MonoBehaviour
     {             
         public bool bShowCDI = true;
         public bool bShowH = true;
