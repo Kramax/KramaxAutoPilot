@@ -103,4 +103,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <None Include="Kramax.version" />
+  </ItemGroup>
 </Project>
