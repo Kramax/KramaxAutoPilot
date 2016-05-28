@@ -11,7 +11,8 @@ namespace Kramax
     using Presets;
 
     [KSPAddon(KSPAddon.Startup.Flight, true)]
-    public class PresetManager : ReloadableMonoBehaviour
+	public class PresetManager : ReloadableMonoBehaviour
+//	public class PresetManager : MonoBehaviour
     {
         private static PresetManager instance;
         public static PresetManager Instance

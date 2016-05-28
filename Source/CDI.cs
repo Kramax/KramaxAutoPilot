@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.UI.Screens;
+using KSP.UI.Screens.Flight;
 
 namespace Kramax
 {
@@ -98,7 +100,8 @@ namespace Kramax
         }
     }
 
-    public class CDI : ReloadableMonoBehaviour
+	public class CDI : ReloadableMonoBehaviour
+//	public class CDI : MonoBehaviour
     {             
         public bool bShowCDI = true;
         public bool bShowH = true;
@@ -144,6 +147,10 @@ namespace Kramax
 
         public void GetNavBallRect()
         {
+        	// ScreenSafeUI appears to no longer be used, so lets get out of here
+        	if (ScreenSafeUI.referenceCam == null)
+        		return;
+        		
             var navball = GameObject.FindObjectOfType<NavBall>();
 
             if (navball == null)
@@ -409,8 +416,8 @@ namespace Kramax
                 GUI.Label(new Rect(barX - 45, 40 + ctrl_height, 90, 20), deltaString,
                   GeneralUI.UISkin.customStyles[(int)myStyles.cdiLabel]);
             }    
-
-            /* GUI.DragWindow(); */
+		// uncommented the following to allow user to move the CDI whereever they want
+            GUI.DragWindow();
         }
     }
 }

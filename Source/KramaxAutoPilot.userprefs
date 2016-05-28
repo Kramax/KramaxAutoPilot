@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="George.cs">
+    <Files>
+      <File FileName="CDI.cs" Line="2" Column="1" />
+      <File FileName="George.cs" Line="3743" Column="53" />
+      <File FileName="KramaxAutoPilot.cs" Line="1" Column="1" />
+      <File FileName="PID\PID_Controller.cs" Line="1" Column="1" />
+      <File FileName="PresetManager.cs" Line="34" Column="3" />
+      <File FileName="Toolbar\AppLauncher.cs" Line="1" Column="1" />
+      <File FileName="ReleaseReloadableMonoBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Kramax.version" Line="10" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
